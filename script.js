@@ -1,16 +1,13 @@
 window.onload = function() {
     var container = document.getElementById('container');
-    var button = document.getElementById('newGridButton');
-
-    createGrid(16); // Create initial 16x16 grid
-
-    button.addEventListener('click', function() {
-        var size = prompt("Enter the number of squares per side for the new grid (max 100)", "16");
-        size = Math.min(Math.max(parseInt(size), 1), 100); // Ensure size is between 1 and 100
-        container.innerHTML = ''; // Remove old grid
-        createGrid(size); // Create new grid
+    var slider = document.getElementById('gridSizeSlider');
+    var sliderValue = document.getElementById('sliderValue');
+    createGrid(slider.value);
+    slider.addEventListener('input', function() {
+        sliderValue.innerHTML = `${this.value} x ${this.value}`
+        container.innerHTML = '';
+        createGrid(this.value); 
     });
-
     function createGrid(size) {
         container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${size}, 1fr)`;

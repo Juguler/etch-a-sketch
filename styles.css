@@ -1,7 +1,7 @@
 #container {
     display: grid;
-    width: 320px;
-    height: 320px;
+    width: 450px;
+    height: 450px;
 }
 .grid-item {
     border: 1px solid black;
@@ -41,4 +41,12 @@ h1:hover {
 }
 #newGridButton {
     margin-top: 20px;
+}
+.sliderValue {
+    margin-top:10px;
+    font-size: 25px;
+}
+#gridSizeSlider {
+    width: 300px;
+    margin-bottom:10px;
 }
